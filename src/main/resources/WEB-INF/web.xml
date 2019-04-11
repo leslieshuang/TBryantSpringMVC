@@ -1,0 +1,24 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns="http://java.sun.com/xml/ns/javaee"
+		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+		 metadata-complete="true" version="3.0">
+	<display-name>
+		TBryantSpringMVC
+	</display-name>
+	<!--配置一个servlet,这个配置一个servlet就是springMVC中的DispatcherServlet-->
+	<servlet>
+		<servlet-name>TBryantDispatcherServlet</servlet-name>
+		<servlet-class>com.tbryant.springmvc.tool.TBryantDispatcherServlet</servlet-class>
+		<init-param>
+			<!--读取文件的地址-->
+			<param-name>contextConfigLocation</param-name>
+			<param-value>application.properties</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TBryantDispatcherServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+</web-app>
